@@ -15,7 +15,7 @@ def create_board():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
 	return board
 
-def drop_pieces(board, row, col, piece):
+def drop_piece(board, row, col, piece):
 	board[row][col] = piece
 
 def is_valid_location(board, col):
@@ -116,7 +116,7 @@ while not game_over:
 
 				if is_valid_location(board, col):
 					row = get_next_open_row(board, col)
-					drop_pieces(board, row, col, 1)
+					drop_piece(board, row, col, 1)
 
 					if winning_move(board, 1):
 						label = myfont.render("Player 1 wins!!", 1, RED)
@@ -131,7 +131,7 @@ while not game_over:
 
 				if is_valid_location(board, col):
 					row = get_next_open_row(board, col)
-					drop_pieces(board, row, col, 2)
+					drop_piece(board, row, col, 2)
 
 					if winning_move(board, 2):
 						label = myfont.render("Player 2 wins!!", 1, YELLOW)
